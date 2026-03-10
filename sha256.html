@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature numérique - SHA-256</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="sha256.html">Signature numérique (SHA-256)</a></li>
+            <li><a href="donnees.html">Données RGPD</a></li>
+            <li><a href="bcrypt.html">Mots de passe (Bcrypt)</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Signature numérique (SHA-256)</h1>
+
+        <section>
+            <h2>Sélectionner un fichier</h2>
+            <input type="file" id="fichier">
+            <button onclick="genererHash()">Générer la signature</button>
+        </section>
+
+        <section>
+            <h2>Signature numérique (hash SHA-256) :</h2>
+            <textarea id="resultat" readonly placeholder="Le hash apparaîtra ici..."></textarea>
+        </section>
+    </main>
+
+    <script src="js/sha256.js"></script>
+</body>
+</html>

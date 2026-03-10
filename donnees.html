@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Données RGPD</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="sha256.html">Signature numérique (SHA-256)</a></li>
+            <li><a href="donnees.html">Données RGPD</a></li>
+            <li><a href="bcrypt.html">Mots de passe (Bcrypt)</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Sécurisation des données RGPD</h1>
+
+        <section>
+            <h2>Chiffrer des données</h2>
+            <input type="text" id="nom" placeholder="Nom"><br><br>
+            <input type="text" id="prenom" placeholder="Prénom"><br><br>
+            <input type="email" id="email" placeholder="Email"><br><br>
+            <input type="date" id="dateNaissance"><br><br>
+            <input type="password" id="cleChiffrement" placeholder="Clé de chiffrement"><br><br>
+            <button id="btnChiffrer">Chiffrer</button>
+        </section>
+
+        <section>
+            <h2>Données chiffrées :</h2>
+            <textarea id="donneesChiffrees" readonly placeholder="Les données chiffrées apparaîtront ici..."></textarea>
+        </section>
+
+        <section>
+            <h2>Déchiffrer des données</h2>
+            <input type="password" id="cleDechiffrement" placeholder="Clé de déchiffrement"><br><br>
+            <button id="btnDechiffrer">Déchiffrer</button>
+        </section>
+
+        <section>
+            <h2>Données déchiffrées :</h2>
+            <textarea id="donneesDechiffrees" readonly placeholder="Les données déchiffrées apparaîtront ici..."></textarea>
+        </section>
+    </main>
+
+    <script src="js/donnees.js"></script>
+    <script>
+        // On attache les événements après le chargement du DOM
+        document.getElementById('btnChiffrer').addEventListener('click', chiffrerDonnees);
+        document.getElementById('btnDechiffrer').addEventListener('click', dechiffrerDonnees);
+    </script>
+</body>
+</html>
