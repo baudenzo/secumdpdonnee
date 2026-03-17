@@ -34,7 +34,7 @@ async function chiffrerDonnees() {
     const resultat = document.getElementById('donneesChiffrees');
 
     if (!nom || !prenom || !email || !dateNaissance || !cle) {
-        resultat.value = "⚠️ Veuillez remplir tous les champs.";
+        resultat.value = "Veuillez remplir tous les champs.";
         return;
     }
 
@@ -58,11 +58,11 @@ async function dechiffrerDonnees() {
     const resultat = document.getElementById('donneesDechiffrees');
 
     if (!donneesStockees) {
-        resultat.value = "⚠️ Aucune donnée chiffrée disponible.";
+        resultat.value = "Aucune donnée chiffrée disponible.";
         return;
     }
     if (!cle) {
-        resultat.value = "⚠️ Veuillez entrer la clé de déchiffrement.";
+        resultat.value = "Veuillez entrer la clé de déchiffrement.";
         return;
     }
 
@@ -83,6 +83,6 @@ async function dechiffrerDonnees() {
             `Email : ${donnees.email}\n` +
             `Date de naissance : ${donnees.dateNaissance}`;
     } catch (e) {
-        resultat.value = "❌ Clé incorrecte ! Impossible de déchiffrer.";
+        resultat.value = "Clé incorrecte ! Impossible de déchiffrer.";
     }
 }

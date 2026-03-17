@@ -3,7 +3,7 @@ async function genererHash() {
     const resultat = document.getElementById('resultat');
 
     if (!fichier) {
-        resultat.value = "⚠️ Veuillez sélectionner un fichier.";
+        resultat.value = "Veuillez sélectionner un fichier.";
         return;
     }
 
