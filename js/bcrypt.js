@@ -4,13 +4,19 @@ const bcrypt = dcodeIO.bcrypt;
 // Fonction pour hacher un mot de passe
 function hacherMotDePasse() {
     const motDePasse = document.getElementById('motDePasse').value;
+    const saltRounds = parseInt(document.getElementById('saltRounds').value, 10);
+
     if (!motDePasse) {
         alert('Veuillez entrer un mot de passe à hacher.');
         return;
     }
 
+    if (isNaN(saltRounds) || saltRounds < 1 || saltRounds > 15) {
+        alert('Veuillez entrer un nombre d\'itérations valide (entre 1 et 15).');
+        return;
+    }
+
     // Génération du hash avec bcrypt
-    const saltRounds = 10; // Nombre de rounds pour le sel
     const hash = bcrypt.hashSync(motDePasse, saltRounds);
 
     // Affichage du hash dans la zone de texte

@@ -3,17 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sécurisation des données</title>
+    <title>Accueil - Sécurisation des données</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="sha256.html">Signature numérique (SHA-256)</a></li>
-            <li><a href="donnees.html">Données RGPD</a></li>
-            <li><a href="bcrypt.html">Mots de passe (Bcrypt)</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="sha256.html">Signature numérique (SHA-256)</a></li>
+                <li><a href="donnees.html">Données RGPD</a></li>
+                <li><a href="bcrypt.html">Mots de passe (Bcrypt)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Bienvenue sur notre plateforme de sécurisation des données</h1>
+            <p>Explorez nos outils pour protéger vos données et garantir leur sécurité.</p>
+
+            <div class="cards">
+                <div class="card">
+                    <h2>Signature numérique (SHA-256)</h2>
+                    <p>Générez des signatures numériques sécurisées pour vos données.</p>
+                    <a href="sha256.html" class="btn">Découvrir</a>
+                </div>
+
+                <div class="card">
+                    <h2>Données RGPD</h2>
+                    <p>Chiffrez et déchiffrez vos données sensibles en toute sécurité.</p>
+                    <a href="donnees.html" class="btn">Découvrir</a>
+                </div>
+
+                <div class="card">
+                    <h2>Mots de passe (Bcrypt)</h2>
+                    <p>Hachez et vérifiez vos mots de passe avec l'algorithme Bcrypt.</p>
+                    <a href="bcrypt.html" class="btn">Découvrir</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Sécurisation des données</p>
+    </footer>
 </body>
 </html>

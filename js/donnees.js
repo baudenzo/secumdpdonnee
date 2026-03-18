@@ -1,6 +1,7 @@
 let donneesStockees = null;
 let ivStocke = null;
 
+// Fonction pour générer une clé AES-256 à partir d'un mot de passe en utilisant PBKDF2
 async function genererCle(motDePasse) {
     const encoder = new TextEncoder();
     const keyMaterial = await crypto.subtle.importKey(
@@ -25,6 +26,7 @@ async function genererCle(motDePasse) {
     );
 }
 
+// Fonction pour chiffrer les données personnelles de l'utilisateur avec AES-GCM
 async function chiffrerDonnees() {
     const nom = document.getElementById('nom').value;
     const prenom = document.getElementById('prenom').value;
@@ -53,6 +55,7 @@ async function chiffrerDonnees() {
     resultat.value = btoa(String.fromCharCode(...new Uint8Array(donneesChiffrees)));
 }
 
+// Fonction pour déchiffrer les données personnelles avec la clé fournie par l'utilisateur
 async function dechiffrerDonnees() {
     const cle = document.getElementById('cleDechiffrement').value;
     const resultat = document.getElementById('donneesDechiffrees');

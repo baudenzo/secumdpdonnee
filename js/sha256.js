@@ -1,3 +1,4 @@
+// Fonction pour générer le hash SHA-256 d'un fichier sélectionné par l'utilisateur
 async function genererHash() {
     const fichier = document.getElementById('fichier').files[0];
     const resultat = document.getElementById('resultat');

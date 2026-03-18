@@ -3,47 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mots de passe (Bcrypt)</title>
+    <title>Sécurisation des mots de passe (Bcrypt)</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="sha256.html">Signature numérique (SHA-256)</a></li>
-            <li><a href="donnees.html">Données RGPD</a></li>
-            <li><a href="bcrypt.html">Mots de passe (Bcrypt)</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="sha256.html">Signature numérique (SHA-256)</a></li>
+                <li><a href="donnees.html">Données RGPD</a></li>
+                <li><a href="bcrypt.html" class="active">Mots de passe (Bcrypt)</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <h1>Sécurisation des mots de passe (Bcrypt)</h1>
+        <div class="container">
+            <h1>Sécurisation des mots de passe</h1>
 
-        <section>
-            <h2>Hacher un mot de passe</h2>
-            <input type="password" id="motDePasse" placeholder="Entrez un mot de passe"><br><br>
-            <button id="btnHacher">Hacher</button>
-        </section>
+            <section class="card">
+                <h2>Hacher un mot de passe</h2>
+                <input type="password" id="motDePasse" placeholder="Entrez un mot de passe">
+                <label for="saltRounds">Nombre d'itérations :</label>
+                <input type="number" id="saltRounds" value="10" min="1" max="15" step="1">
+                <button id="btnHacher">Hacher</button>
+            </section>
 
-        <section>
-            <h2>Hash généré :</h2>
-            <textarea id="hashResultat" readonly placeholder="Le hash apparaîtra ici..."></textarea>
-        </section>
+            <section class="card">
+                <h2>Hash généré :</h2>
+                <textarea id="hashResultat" readonly placeholder="Le hash apparaîtra ici..."></textarea>
+            </section>
 
-        <section>
-            <h2>Vérifier un mot de passe</h2>
-            <input type="password" id="motDePasseVerif" placeholder="Entrez le mot de passe à vérifier"><br><br>
-            <button id="btnVerifier">Vérifier</button>
-        </section>
+            <section class="card">
+                <h2>Vérifier un mot de passe</h2>
+                <input type="password" id="motDePasseVerif" placeholder="Entrez le mot de passe à vérifier">
+                <button id="btnVerifier">Vérifier</button>
+            </section>
 
-        <section>
-            <h2>Résultat de la vérification :</h2>
-            <textarea id="verifResultat" readonly placeholder="Le résultat apparaîtra ici..."></textarea>
-        </section>
+            <section class="card">
+                <h2>Résultat de la vérification :</h2>
+                <textarea id="verifResultat" readonly placeholder="Le résultat apparaîtra ici..."></textarea>
+            </section>
+        </div>
     </main>
 
-    <!-- Librairie bcrypt -->
+    <footer>
+        <p>&copy; 2026 - Sécurisation des mots de passe avec Bcrypt</p>
+    </footer>
+
     <script src="js/bcrypt.js"></script>
     <script>
         document.getElementById('btnHacher').addEventListener('click', hacherMotDePasse);
